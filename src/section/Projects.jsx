@@ -5,8 +5,8 @@ import img2 from '../assets/img2.jpg'
 import photo2 from '../assets/photo2.png'
 import img3 from '../assets/img3.jpg'
 import photo3 from '../assets/photo3.png'
-import img4 from '../assets/img4.jpeg'
-import photo4 from '../assets/photo4.jpeg'
+// import img4 from '../assets/img4.jpeg'
+// import photo4 from '../assets/photo4.jpeg'
 import { useMotionValueEvent, useScroll } from "framer-motion"
 import { motion, AnimatePresence } from "framer-motion"
 //check whether the device is mobile or not
