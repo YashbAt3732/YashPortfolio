@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import img1 from '../assets/img1.JPG'
-import photo1 from '../assets/photo1.JPG'
-import img2 from '../assets/img2.JPG'
-import photo2 from '../assets/photo2.PNG'
-import img3 from '../assets/img3.JPG'
-import photo3 from '../assets/photo3.PNG'
+import img1 from '../assets/img1.jpg'
+import photo1 from '../assets/photo1.jpg'
+import img2 from '../assets/img2.jpg'
+import photo2 from '../assets/photo2.png'
+import img3 from '../assets/img3.jpg'
+import photo3 from '../assets/photo3.png'
 import img4 from '../assets/img4.jpeg'
 import photo4 from '../assets/photo4.jpeg'
 import { useMotionValueEvent, useScroll } from "framer-motion"
