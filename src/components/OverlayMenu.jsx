@@ -29,6 +29,7 @@ const OverlayMenu = ({isOpen, onClose}) => {
               "About",
               "Skills",
               "Projects",
+              "Certificates",
               // "Experience",
               // "Testimonial",
               "Contact",

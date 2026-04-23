@@ -107,6 +107,17 @@ export default function Navbar(){
             Projects
           </a>
           <a
+            href="#certificates"
+            className="relative top-0.5 px-3 py-1 ml-3 rounded-xl font-semibold uppercase text-white/90
+            backdrop-blur-md bg-gradient-to-r from-white/10 via-white/5 to-white/10
+            border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.6)]
+            transition-all duration-500 ease-out
+            hover:from-white/20 hover:via-white/10 hover:to-white/20
+            hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+            >
+            Certificates
+          </a>
+          <a
             href="#contact"
             className="relative top-0.5 px-3 py-1 ml-3 rounded-xl font-semibold uppercase text-white/90
             backdrop-blur-md bg-gradient-to-r from-white/10 via-white/5 to-white/10

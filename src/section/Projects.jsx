@@ -1,10 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import img1 from '../assets/img1.jpg'
-import photo1 from '../assets/photo1.jpg'
-import img2 from '../assets/img2.jpg'
-import photo2 from '../assets/photo2.png'
-import img3 from '../assets/img3.jpg'
-import photo3 from '../assets/photo3.png'
+import unimartImg from '../assets/unimart_campus.png'
+import unimartMobile from '../assets/unimart_mobile.png'
+import clinicImg from '../assets/clinic_mgmt.png'
+import clinicMobile from '../assets/nivaaran_mobile.png'
 // import img4 from '../assets/img4.jpeg'
 // import photo4 from '../assets/photo4.jpeg'
 import { useMotionValueEvent, useScroll } from "framer-motion"
@@ -30,27 +28,19 @@ const Projects = () => {
   //projects to show in project section
   const projects = useMemo(
     () => [
-      
       {
-        title: "Nivaran",
-        link: "https://ai-valuation.vercel.app/",
-        bgColor: isMobile? "#121E26":"#0d4d3d",
-        image: isMobile ? photo1 : img1, // use mobile or desktop image
-        githubLink: "",
+        title: "TheUniMart",
+        link: "",
+        bgColor: isMobile ? "#8A4830":"#EA580C",
+        image: isMobile ? unimartMobile : unimartImg,
+        githubLink: "https://github.com/YashbAt3732/TheUniMart",
       },
       {
-        title: "E-Commerce App",
+        title: "Nivaaran App",
         link: "",
-        bgColor: isMobile ? "#153A4B":"#3884d3",
-        image: isMobile ? photo2 : img2,
-        githubLink: "https://github.com/YashbAt3732/EcommerceWebsite",
-      },
-      {
-        title: "Real Time process Monitoring",
-        link: "",
-        bgColor: isMobile ? "#8A4830":"#306B8A",
-        image: isMobile ? photo3 : img3,
-        githubLink: "https://github.com/YashbAt3732/Real-Time-Process-Monitoring-Dashboard",
+        bgColor: isMobile ? "#153A4B":"#3B82F6",
+        image: isMobile ? clinicMobile : clinicImg,
+        githubLink: "https://github.com/YashbAt3732/ClinicManagementSystem",
       },
     ],
     [isMobile] // re-run only when `isMobile` changes
@@ -72,7 +62,7 @@ const Projects = () => {
       ref={sceneRef} 
       className='relative text-white'
       style={{
-        height: `${100*projects.length}vh`,
+        height: `${90*projects.length}vh`,
         backgroundColor: activeProject.bgColor,
         transition: "background-color 400ms ease"
       }}
@@ -87,7 +77,7 @@ const Projects = () => {
               ${activeIndex===idx ? "opacity-100 z-20" : "opacity-0 z-0 sm:z-10"}`
               }
               style={{
-                width: "85%", maxWidth: "1200px"
+                width: isMobile ? "90%" : "95%", maxWidth: "1600px"
               }}
             >
               <AnimatePresence mode="wait">
@@ -97,11 +87,11 @@ const Projects = () => {
                     animate={{opacity:1, y:0}}
                     exit={{opacity:0, y:30}}
                     transition={{duration:0.5, ease:"easeOut"}}
-                    className={`block text-center text-[clamp(2rem,6vw,5rem)] text-white/95 sm:absolute sm:-top-20 sm:left-[35%] lg:left-[-5%] sm:mb-0
-                      italic font-semibold ${isMobile? "-mt-24": ""}
+                    className={`block text-center text-[clamp(2.5rem,8vw,6rem)] text-white/95 sm:absolute sm:-top-24 sm:left-[35%] lg:left-0 sm:mb-0
+                      italic font-bold ${isMobile? "-mt-24": ""}
                     `}
                     style={{
-                      zIndex:5, textAlign: isMobile? "center":"left"
+                      zIndex:30, textAlign: isMobile? "center":"left"
                     }}
                   >
                     {project.title}
@@ -109,9 +99,9 @@ const Projects = () => {
                 )}
               </AnimatePresence>
               <div className={`relative w-full overflow-hidden bg-black/20 shadow-2xl 
-                    md:shadow-[0_35px_60px_-15px_rgba(0,0,0,07)] 
-                    ${isMobile? " mb-6 rounded-lg" : "mb-10 sm:mb-12 rounded-xl"}
-                    h-[62vh] sm:h-[66vh]
+                    md:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)] 
+                    ${isMobile? " mb-6 rounded-lg" : "mb-10 sm:mb-12 rounded-2xl"}
+                    h-[65vh] sm:h-[72vh]
                   `}
                   style={{
                     zIndex:10,
@@ -120,11 +110,11 @@ const Projects = () => {
               >
                 <img src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover drop-shadow-xl md:drop-shadow-2xl"  
+                  className="w-full h-full object-cover md:object-center drop-shadow-xl md:drop-shadow-2xl"  
                   style={{
                     position: "relative",
                     zIndex:10,
-                    filter:"drop-shadow(0,16px 40px rgba(0,0,0,0.65))",
+                    filter:"drop-shadow(0px 16px 40px rgba(0,0,0,0.65))",
                     transition:"filter 200ms ease"
                   }}
                   loading="lazy"

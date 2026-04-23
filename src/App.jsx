@@ -7,6 +7,7 @@ import Home from "./section/Home";
 import Projects from "./section/Projects";
 import Skills from "./section/Skills";
 import Testimonial from "./section/Testimonial";
+import Certificates from "./section/Certificates";
 import CustomCursor from "./components/CustomCursor";
 import { useState } from "react";
 import IntroAnimation from "./components/IntroAnimation";
@@ -24,6 +25,7 @@ export default function App(){
           <About />
           <Skills/>
           <Projects/>
+          <Certificates/>
           {/* <Experience/>
           <Testimonial/> */}
           <Contact/>
