@@ -6,6 +6,7 @@ import { IoLogoJavascript } from "react-icons/io";
 
 import { motion, useMotionValue } from 'framer-motion'
 import { useEffect, useRef, useState } from "react";
+import ParticlesBackground from "../components/ParticlesBackground";
 
 const Skills = () => {
   const skills = [
@@ -98,6 +99,9 @@ const Skills = () => {
 
   return (
     <section id='skills' ref={sectionRef} className='h-1/2 w-full pb-8 flex flex-col items-center justify-center bg-black text-white overflow-hidden'>
+      {/* Moving star background */}
+      <ParticlesBackground />
+
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-[300px] h-[300px] rounded-full 
           bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] 

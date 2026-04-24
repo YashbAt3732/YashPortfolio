@@ -30,23 +30,36 @@ export default function Navbar(){
     
   },[])
   useEffect(()=>{
+    let ticking = false;
     const handleScroll=()=>{
-      if(forceVisible){
-        setVisible(true);
-        return;
-      }
-      const currentScrollY=window.scrollY;
-      if(currentScrollY>lastScrollY.current){
-        setVisible(false);
-      }
-      else{
-        setVisible(true);
-      }
-      if(timerId.current) clearTimeout(timerId.current);
-      timerId.current=setTimeout(() => {
-        setVisible(false);
-      }, 3000 );
-      lastScrollY.current=currentScrollY;
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        if(forceVisible){
+          setVisible(true);
+          ticking = false;
+          return;
+        }
+        const currentScrollY=window.scrollY;
+        // Only update visibility if scroll change is more than a small threshold to avoid jitters
+        if(Math.abs(currentScrollY - lastScrollY.current) > 5) {
+          if(currentScrollY>lastScrollY.current){
+            setVisible(false);
+          }
+          else{
+            setVisible(true);
+          }
+          lastScrollY.current=currentScrollY;
+        }
+
+        if(timerId.current) clearTimeout(timerId.current);
+        timerId.current=setTimeout(() => {
+          setVisible(false);
+        }, 3000 );
+        
+        ticking = false;
+      });
     }
     window.addEventListener("scroll", handleScroll, {passive:true})
     return ()=>{

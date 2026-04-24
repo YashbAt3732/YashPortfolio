@@ -46,12 +46,12 @@ const Home = () => {
       <div className="absolute inset-0">
         {/* first element in top-left glowing */}
         <div className="absolute -top-32 -left-32 
-          w-[70vw ]sm: w-[500vw] md:w-[40vw]
-          h-[70vw ]sm: h-[500vw] md:h-[40vw]
+          w-[70vw] sm:w-[40vw] md:w-[40vw]
+          h-[70vw] sm:h-[40vw] md:h-[40vw]
           max-w-[500px] max-h-[500px] rounded-full
           bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-          opacity-30 md:opacity-10 sm:opacity-20  
-          blur-[100px] sm:blur-[130px] md:blur-[150px]
+          opacity-20 md:opacity-10 sm:opacity-20  
+          blur-[60px] sm:blur-[130px] md:blur-[150px]
           animate-pulse
           "
         >
@@ -59,12 +59,12 @@ const Home = () => {
         </div>
         {/* second element in top-left glowing */}
         <div className="absolute -bottom-32 -right-32 
-          w-[70vw ]sm: w-[500vw] md:w-[40vw]
-          h-[70vw ]sm: h-[500vw] md:h-[40vw]
+          w-[70vw] sm:w-[40vw] md:w-[40vw]
+          h-[70vw] sm:h-[40vw] md:h-[40vw]
           max-w-[500px] max-h-[500px] rounded-full
           bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-          opacity-30 md:opacity-10 sm:opacity-20  
-          blur-[100px] sm:blur-[130px] md:blur-[150px]
+          opacity-20 md:opacity-10 sm:opacity-20  
+          blur-[60px] sm:blur-[130px] md:blur-[150px]
           animate-pulse"
           style={{animationDelay: "0.5s"}}
           >

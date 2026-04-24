@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaAward, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { SiCoursera } from 'react-icons/si';
 import { HiAcademicCap } from 'react-icons/hi2';
+import ParticlesBackground from '../components/ParticlesBackground';
 
 const certificates = [
   {
@@ -72,10 +73,13 @@ const Certificates = () => {
 
   return (
     <section id="certificates" className="relative py-20 px-6 overflow-hidden bg-black text-white">
+      {/* Moving star background */}
+      <ParticlesBackground />
+
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/10 blur-[150px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[80px] sm:blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[80px] sm:blur-[150px] rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -110,7 +114,7 @@ const Certificates = () => {
               }}
               className="relative group perspective-1000"
             >
-              <div className="h-full p-8 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+              <div className="h-full p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden">
                 {/* Gradient bar on top */}
                 <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${cert.color}`} />
                 

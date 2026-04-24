@@ -1,5 +1,6 @@
 import {motion} from 'framer-motion'
 import boy from '../assets/boy.jpg'
+import ParticlesBackground from '../components/ParticlesBackground'
 const About = () => {
   //stats in button type profile
   const stats=[
@@ -14,6 +15,9 @@ const About = () => {
   ]
   return (
     <section id='about' className='w-full min-h-screen flex items-center justify-center relative bg-black text-white overflow-hidden'>
+      {/* Moving star background */}
+      <ParticlesBackground />
+      
       <div className='absolute inset-0 pointer-events-none'>
         {glows.map((c,i)=>(
           <div key={i} style={{ animationDelay: `${i * 0.4}s` }} className={`absolute rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] animate-pulse ${c} `}/>

@@ -52,10 +52,16 @@ const Projects = () => {
   })
   const thresholds=projects.map((_, i)=>(i+1)/projects.length);
   const [activeIndex, setActiveIndex]=useState(0);
+  
   useMotionValueEvent(scrollYProgress, "change", (v)=>{
-    const idx=thresholds.findIndex((t)=> v<=t);
-    setActiveIndex(idx === -1 ? thresholds.length-1 : idx);
+    const idx = thresholds.findIndex((t)=> v<=t);
+    const newIdx = idx === -1 ? thresholds.length-1 : idx;
+    // Only update state if index actually changed to prevent excessive re-renders
+    if (newIdx !== activeIndex) {
+      setActiveIndex(newIdx);
+    }
   });
+
   const activeProject=projects[activeIndex];
   return (
     <section id="projects" 
@@ -115,7 +121,8 @@ const Projects = () => {
                     position: "relative",
                     zIndex:10,
                     filter:"drop-shadow(0px 16px 40px rgba(0,0,0,0.65))",
-                    transition:"filter 200ms ease"
+                    transition:"filter 200ms ease",
+                    willChange: "transform, opacity"
                   }}
                   loading="lazy"
                 />
